@@ -7,6 +7,8 @@ body {
 }
 
 .ripple-button {
+  position: relative;
+
   appearance: none; /* override browser styling */
   cursor: pointer;
   font-size: 3rem;
@@ -16,4 +18,13 @@ body {
   color: hsl(200 100% 65%);
   border: 5px solid currentColor;
   border-radius: 0.125em;
+}
+
+.ripple-button::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: yellow;
+  opacity: 0.5;
 }
