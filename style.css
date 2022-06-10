@@ -7,6 +7,10 @@ body {
 }
 
 .ripple-button {
+  /* Place the ::before sudo element into the center of the ripple-button */
+  display: inline-grid; /* inline-flex will also work */
+  place-items: center;
+
   position: relative;
 
   appearance: none; /* override browser styling */
@@ -25,6 +29,7 @@ body {
   position: absolute;
   width: 100%;
   aspect-ratio: 1 / 1;
+  border-radius: 50%;
   background: yellow;
   opacity: 0.5;
 }
