@@ -13,6 +13,9 @@ body {
 
   position: relative;
 
+  /* Create new stacking context so the sudo element can stay behind the button with z-index: -1; */
+  isolation: isolate;
+
   appearance: none; /* override browser styling */
   cursor: pointer;
   font-size: 3rem;
@@ -27,9 +30,10 @@ body {
 .ripple-button::before {
   content: '';
   position: absolute;
+  z-index: -1;
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  background: yellow;
+  background: green;
   opacity: 0.5;
 }
