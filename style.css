@@ -33,7 +33,8 @@ body {
 
   top: var(--y);
   left: var(--x);
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 500ms;
 
   z-index: -1;
   width: 100%;
@@ -41,4 +42,9 @@ body {
   border-radius: 50%;
   background: green;
   opacity: 0.5;
+}
+
+/* As long as I hold down my mouse, it will be :active, if I release it wil not be :active anymore */
+.ripple-button:active::before {
+  transform: translate(-50%, -50%) scale(1);
 }
