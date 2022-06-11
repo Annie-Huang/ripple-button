@@ -38,10 +38,10 @@ body {
   transition: transform 500ms;
 
   z-index: -1;
-  width: 100%;
+  width: 150%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  background: green;
+  background: #fff;
   opacity: 0.5;
 }
 
@@ -56,7 +56,10 @@ body {
 }
 
 @keyframes pulse {
+  /* without 0% it will just use the default styling, '.ripple-button::before' as the 0% */
+
   100% {
     transform: translate(-50%, -50%) scale(1);
+    opacity: 0; /* fake out at the end of the animation */
   }
 }
