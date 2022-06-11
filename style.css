@@ -25,6 +25,7 @@ body {
   color: hsl(200 100% 65%);
   border: 5px solid currentColor;
   border-radius: 0.125em;
+  overflow: hidden;
 }
 
 .ripple-button::before {
@@ -44,7 +45,18 @@ body {
   opacity: 0.5;
 }
 
-/* As long as I hold down my mouse, it will be :active, if I release it wil not be :active anymore */
-.ripple-button:active::before {
-  transform: translate(-50%, -50%) scale(1);
+/*!* As long as I hold down my mouse, it will be :active, if I release it wil not be :active anymore *!*/
+/*.ripple-button:active::before {*/
+/*  transform: translate(-50%, -50%) scale(1);*/
+/*}*/
+
+/* javascript cannot really grep the sudo element */
+.pulse::before {
+  animation: pulse 500ms;
+}
+
+@keyframes pulse {
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }

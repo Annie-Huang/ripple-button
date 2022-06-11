@@ -11,6 +11,8 @@ function mousePositionToCustomProp(event, element) {
 }
 
 // rippleButton.addEventListener('mousemove', (e) => {
-rippleButton.addEventListener('mousedown', (e) => {
+// rippleButton.addEventListener('mousedown', (e) => {
+rippleButton.addEventListener('click', (e) => {
   mousePositionToCustomProp(e, rippleButton);
+  rippleButton.classList.add('pulse'); // javascript cannot really grep the sudo element
 });
