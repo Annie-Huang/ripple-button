@@ -10,6 +10,7 @@ function mousePositionToCustomProp(event, element) {
   // console.log(posX, posY);
 }
 
-rippleButton.addEventListener('mousemove', (e) => {
+// rippleButton.addEventListener('mousemove', (e) => {
+rippleButton.addEventListener('mousedown', (e) => {
   mousePositionToCustomProp(e, rippleButton);
 });
