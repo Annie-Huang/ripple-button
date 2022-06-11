@@ -1,8 +1,15 @@
 const rippleButton = document.querySelector('.ripple-button');
 
-rippleButton.addEventListener('mousemove', (e) => {
-  let posX = e.offsetX;
-  let posY = e.offsetY;
+function mousePositionToCustomProp(event, element) {
+  let posX = event.offsetX;
+  let posY = event.offsetY;
 
-  console.log(posX, posY);
+  element.style.setProperty('--x', posX + 'px');
+  element.style.setProperty('--y', posY + 'px');
+
+  // console.log(posX, posY);
+}
+
+rippleButton.addEventListener('mousemove', (e) => {
+  mousePositionToCustomProp(e, rippleButton);
 });
